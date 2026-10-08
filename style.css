@@ -1,0 +1,1053 @@
+/* RunSmart — стили сайта
+
+   Содержание:
+    1. Переменные и базовые стили
+    2. Типографика
+    3. Кнопки
+    4. Первый экран и шапка
+    5. Переключатель языка
+    6. Преимущества
+    7. Консультация (форма)
+    8. Карусель
+    9. Каталог
+   10. Отзывы
+   11. Контакты
+   12. Модальные окна
+   13. Кнопка «наверх»
+   14. Адаптив (мобильные устройства)
+*/
+
+/* ==========================================================================
+   1. Переменные и базовые стили
+   ========================================================================== */
+
+:root {
+  --red: #c70101;
+  --dark: #ffffff;
+  --text: #0d0d0d;
+  --font-head: 'Montserrat', 'Inter', Arial, sans-serif;
+  --font-body: 'Inter', 'Montserrat', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  zoom: .85;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: #fff;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-head);
+  cursor: pointer;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 944px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* ==========================================================================
+   2. Типографика
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+.btn,
+.tab,
+.card__title,
+.price__new,
+.header__phone,
+.header__brands strong,
+.contacts__phone,
+.hero__sub,
+.hero__catalog,
+.card__more {
+  font-family: var(--font-head);
+}
+
+h1,
+h2 {
+  letter-spacing: .02em;
+}
+
+h1 {
+  font-weight: 800!important;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+.btn,
+.tab,
+.hero__sub,
+.card__more {
+  letter-spacing: .04em;
+}
+
+p,
+li,
+span,
+.adv p,
+.review p {
+  letter-spacing: .005em;
+}
+
+/* ==========================================================================
+   3. Кнопки
+   ========================================================================== */
+
+.btn {
+  background: var(--red);
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background .2s, transform .1s;
+}
+
+.btn:hover {
+  background: #e00808;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--small {
+  font-size: 12px;
+  width: 153px;
+  height: 32px;
+}
+
+.btn--big {
+  font-size: 16px;
+  width: 303px;
+  height: 54px;
+  display: block;
+  margin-left: auto;
+}
+
+.btn--form {
+  font-size: 16px;
+  width: 100%;
+  height: 58px;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   4. Первый экран и шапка
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  color: #fff;
+  background: url('images/hero-bg.png') center/cover no-repeat,
+    url('https://www.figma.com/api/mcp/asset/21e30a65-7910-4d49-91b4-0df0c2e8c384.png') center/cover no-repeat,
+    linear-gradient(110deg,rgba(0,0,0,.35),rgba(0,0,0,.1)),
+    radial-gradient(circle at 70% 30%,#8fc46a,transparent 55%),
+    radial-gradient(circle at 20% 80%,#3f7a2e,transparent 60%),
+    #4f8a3a;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 21px;
+}
+
+.logo img {
+  width: 251px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.header__brands {
+  text-align: center;
+}
+
+.header__brands span {
+  display: block;
+  font-size: 12px;
+}
+
+.header__brands strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.header__phone {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hero__inner {
+  padding-top: 100px;
+}
+
+.hero__content {
+  width: 530px;
+  max-width: 100%;
+  margin-left: auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 42px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero__sub {
+  margin-top: 17px;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero__features {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 52px auto 0;
+  width: 424px;
+  max-width: 100%;
+}
+
+.hero__features li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  font-size: 14px;
+  line-height: 18px;
+  width: 130px;
+  text-align: center;
+}
+
+.hero__features img {
+  height: 46px;
+  width: 46px;
+  object-fit: contain;
+}
+
+.hero .btn--big {
+  margin-top: 60px;
+}
+
+.hero__catalog {
+  display: block;
+  margin-top: 14px;
+  text-align: right;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. Переключатель языка
+   ========================================================================== */
+
+.lang {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.lang button {
+  min-width: 38px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.65);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  transition: background .2s, color .2s;
+}
+
+.lang button:hover {
+  background: rgba(255,255,255,.2);
+}
+
+/* ==========================================================================
+   6. Преимущества
+   ========================================================================== */
+
+.advantages {
+  background: #f7f7f7;
+  padding: 90px 20px 80px;
+  text-align: center;
+}
+
+.advantages h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,340px));
+  justify-content: center;
+  gap: 0;
+  margin-top: 70px;
+}
+
+.adv {
+  padding: 0 25px;
+}
+
+.adv img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin: 0 auto 22px;
+}
+
+.adv h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.adv p {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #333;
+}
+
+.red-link {
+  color: red;
+}
+
+/* ==========================================================================
+   7. Консультация (форма)
+   ========================================================================== */
+
+.consult {
+  padding: 110px 0 140px;
+  color: #fff;
+  background: url('images/consult-bg.png') center/cover no-repeat,
+    url('https://www.figma.com/api/mcp/asset/14480aaa-90a9-456b-90c7-8f19c6c45b4b.png') center/cover no-repeat,
+    radial-gradient(circle at 75% 40%,#3a4a66,transparent 55%),
+    linear-gradient(120deg,#2b2b2b,#101010);
+}
+
+.consult h2 {
+  font-size: 36px;
+  line-height: 54px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.consult p {
+  margin-top: 8px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.lead-form {
+  margin-top: 36px;
+  width: 303px;
+  max-width: 100%;
+}
+
+.lead-form input {
+  display: block;
+  width: 100%;
+  height: 52px;
+  margin-bottom: 13px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  font: 14px var(--font-body);
+  color: #222;
+}
+
+.lead-form input::placeholder {
+  color: #4b4b4b;
+}
+
+.lead-form input:focus {
+  outline: 2px solid var(--red);
+}
+
+/* ==========================================================================
+   8. Карусель
+   ========================================================================== */
+
+.carousel {
+  background: #fff;
+  padding: 30px 0;
+}
+
+.carousel__inner {
+  max-width: 947px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.carousel__slide {
+  position: relative;
+  width: 750px;
+  max-width: calc(100% - 140px);
+  aspect-ratio: 750/580;
+  background: #fff;
+  overflow: hidden;
+}
+
+.carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform .5s ease;
+}
+
+.carousel__track img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel__dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background .3s;
+}
+
+.carousel__dots i.active {
+  background: var(--red);
+}
+
+.carousel__arrow {
+  background: none;
+  padding: 10px;
+  width: 70px;
+  height: 80px;
+  align-items: center;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  transition: opacity .2s;
+}
+
+.carousel__arrow:hover {
+  opacity: .7;
+}
+
+.carousel__arrow img {
+  width: 30px;
+  height: 50px;
+}
+
+/* ==========================================================================
+   9. Каталог
+   ========================================================================== */
+
+.catalog {
+  padding: 80px 0 100px;
+  background: var(--dark);
+}
+
+.catalog h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 45px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 50px;
+  padding: 0 12px;
+}
+
+.tab {
+  position: relative;
+  width: 222px;
+  height: 52px;
+  margin: 0 -6px;
+  background: transparent;
+  border: 2px solid #cfcfcf;
+  transform: skewX(-20deg);
+  color: #6b6b6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: .2s;
+}
+
+.tab span {
+  display: block;
+  transform: skewX(20deg);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tab:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.tab.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,303px);
+  gap: 28px 24px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  width: 303px;
+  height: 442px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  position: relative;
+  animation: fade .35s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.card__top {
+  position: relative;
+  z-index: 2;
+  height: 357px;
+  text-align: center;
+  padding: 20px 20px 0;
+}
+
+.card__photo {
+  width: 140px;
+  height: 200px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.card__title {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card__desc {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #444;
+  line-height: 21px;
+  padding: 0 10px;
+}
+
+.card__more {
+  display: inline-block;
+  margin-top: 10px;
+  background: none;
+  color: var(--red);
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card__back {
+  display: none;
+  height: 100%;
+  padding: 0 4px;
+  text-align: left;
+}
+
+.card__back ul {
+  list-style: none;
+}
+
+.card__back li {
+  position: relative;
+  padding-left: 17px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #555;
+  font-weight: 300;
+}
+
+.card__back li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+}
+
+.card__back .card__more {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 14px;
+  z-index: 3;
+}
+
+.card.flipped .card__front {
+  display: none;
+}
+
+.card.flipped .card__back {
+  display: block;
+}
+
+.card__foot {
+  z-index: 1;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 85px;
+  border-top: 1px solid #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price__old {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  text-decoration: line-through;
+  font-weight: 300;
+}
+
+.price__new {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #050505;
+}
+
+.card .btn {
+  width: 135px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   10. Отзывы
+   ========================================================================== */
+
+.reviews {
+  background: #fff;
+  padding: 80px 0 110px;
+  color: var(--text);
+}
+
+.reviews__inner {
+  max-width: 915px;
+}
+
+.reviews h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.review {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.review__photo {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 169px;
+  height: 169px;
+  border-radius: 50%;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #b5b5b5;
+}
+
+.review h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.review span {
+  display: block;
+  margin-top: 2px;
+  font-size: 16px;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.review p {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #333;
+}
+
+.review__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   11. Контакты
+   ========================================================================== */
+
+.contacts {
+  position: relative;
+  height: 630px;
+  background: #ccc;
+}
+
+.contacts__map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(.3);
+}
+
+.contacts__card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 460px;
+  max-width: 100%;
+  background: #fff;
+  padding: 50px 20px 45px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  border-bottom: 4px solid var(--red);
+}
+
+.contacts__address {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contacts__phone {
+  display: block;
+  margin-top: 34px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 27px;
+  margin-top: 34px;
+}
+
+.socials a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+
+.socials a:hover {
+  background: #e00808;
+}
+
+.socials svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* ==========================================================================
+   12. Модальные окна
+   ========================================================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: auto;
+}
+
+.overlay[hidden],
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  width: 382px;
+  max-width: 100%;
+  padding: 35px 40px 40px;
+  text-align: center;
+  border-radius: 4px;
+  animation: fade .3s ease;
+}
+
+.modal h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.modal__close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.lead-form--modal {
+  margin: 35px auto 0;
+}
+
+.lead-form--modal input {
+  border: 1px solid #ddd;
+}
+
+.modal--thanks {
+  padding-bottom: 45px;
+}
+
+/* ==========================================================================
+   13. Кнопка «наверх»
+   ========================================================================== */
+
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.3);
+  transition: background .2s, transform .2s, opacity .2s;
+}
+
+.to-top[hidden] {
+  display: none;
+}
+
+.to-top:hover {
+  background: #e00808;
+  transform: translateY(-3px);
+}
+
+.to-top svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   14. Адаптив (мобильные устройства)
+   ========================================================================== */
+
+/* Планшеты и ниже */
+@media (max-width: 1000px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header__contact {
+    align-items: center;
+  }
+
+  .hero__inner {
+    padding-top: 60px;
+  }
+
+  .hero__content {
+    margin: 0 auto;
+  }
+
+  .hero .btn--big {
+    margin: 50px auto 0;
+  }
+
+  .hero__catalog {
+    text-align: center;
+  }
+
+  .advantages__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .consult h2 {
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit,303px);
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .review {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .review__photo {
+    flex-basis: auto;
+    width: 169px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+}
+
+.lang button.active {
+  background: #fff;
+  color: var(--red);
+  border-color: #fff;
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+  .to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 46px;
+    height: 46px;
+  }
+}
